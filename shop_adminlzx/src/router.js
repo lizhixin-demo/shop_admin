@@ -37,7 +37,7 @@ const router = new Router({
 
   ]
 })
-
+//限制用url直接访问，必须登录访问
 router.beforeEach((to, from, next) => {
   // to 将要访问的路径
   // form 代表 从哪个路径跳转而来
@@ -49,6 +49,8 @@ router.beforeEach((to, from, next) => {
   // console.log(tokenStr);
   if (!tokenStr) return next('/login');
   next();
+  
+
 });
 
 export default router

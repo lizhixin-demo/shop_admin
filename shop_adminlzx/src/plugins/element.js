@@ -14,7 +14,15 @@ import {
     menu,
     submenu,
     menuItem,
-    menuItemGroup
+    menuItemGroup,
+    breadcrumb,
+    breadcrumbItem,
+    card,
+    table,
+    tableColumn,
+    Switch,
+    pagination
+
 } from 'element-ui'
 
 Vue.use(Button)
@@ -32,3 +40,10 @@ Vue.use(menu)
 Vue.use(submenu)
 Vue.use(menuItem)
 Vue.use(menuItemGroup)
+Vue.use(breadcrumb)
+Vue.use(breadcrumbItem)
+Vue.use(card)
+Vue.use(table)
+Vue.use(tableColumn)
+Vue.use(Switch)
+Vue.use(pagination)

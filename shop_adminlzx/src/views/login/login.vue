@@ -61,6 +61,7 @@ export default {
     resetForm(formName) {
       this.$refs[formName].resetFields()
     },
+    //登录
     tologin(formName) {
       this.$refs[formName].validate(async (valid) => {
         if (!valid) {
@@ -77,6 +78,7 @@ export default {
   },
 }
 </script>
+
 <style lang="less" scoped>
 .login_container {
   width: 100vw;

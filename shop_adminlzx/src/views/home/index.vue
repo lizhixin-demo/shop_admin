@@ -15,6 +15,7 @@
       :collapse="collapsea"
       :collapse-transition="false"
       active-text-color="#ffd04b"
+      :default-active="thisActive"
       router
       >
           <el-submenu v-for="item in meunList" :key="item.id" :index="item.id.toString()">
@@ -22,7 +23,8 @@
                 <i :class="icons[item.id]"></i>
                 <span>{{item.authName}}</span>
               </template>
-              <el-menu-item v-for="subItem in item.children" :key="subItem.id" :index="'/'+ subItem.path">
+
+              <el-menu-item v-for="subItem in item.children" :key="subItem.id" :index="'/'+ subItem.path" @click="avtivePath('/'+ subItem.path)">
                 <template slot="title">
                   <i class="el-icon-menu"></i>
                   <span>{{subItem.authName}}</span>
@@ -64,11 +66,13 @@ export default {
         "102": "el-icon-question",
         "145": "el-icon-picture-outline",
       },
-      collapsea:false
+      collapsea:false,
+      thisActive:'/',
     }
   },
   created(){
     this.getMeunList();
+    this.thisActive = window.sessionStorage.getItem('Active');
   },
   methods: {
     loginout() {
@@ -79,10 +83,14 @@ export default {
       const {data:res} = await this.$http.get("menus");
       if(res.meta.status !== 200) return $message.error(res.meta.msg);
       this.meunList = res.data
-      console.log(res);
+      // console.log(res);
     },
     toggle(){
       this.collapsea = ! this.collapsea;
+    },
+    avtivePath(avtivePath){
+      window.sessionStorage.setItem('Active',avtivePath);
+      this.thisActive = avtivePath;
     }
   },
 }
