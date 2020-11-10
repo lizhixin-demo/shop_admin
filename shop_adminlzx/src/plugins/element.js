@@ -21,8 +21,8 @@ import {
     table,
     tableColumn,
     Switch,
-    pagination
-
+    pagination,
+    dialog,
 } from 'element-ui'
 
 Vue.use(Button)
@@ -47,3 +47,4 @@ Vue.use(table)
 Vue.use(tableColumn)
 Vue.use(Switch)
 Vue.use(pagination)
+Vue.use(dialog)
