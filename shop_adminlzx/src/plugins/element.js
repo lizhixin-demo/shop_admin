@@ -23,6 +23,7 @@ import {
     Switch,
     pagination,
     dialog,
+    MessageBox,
 } from 'element-ui'
 
 Vue.use(Button)
@@ -30,6 +31,7 @@ Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Input)
 Vue.prototype.$message = Message
+Vue.prototype.$confirm = MessageBox.confirm
 Vue.use(container)
 Vue.use(header)
 Vue.use(aside)

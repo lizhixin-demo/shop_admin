@@ -38,7 +38,7 @@
     <el-header>
       <el-row :gutter="20">
          <el-col :span="2" class="btn_zd">
-            <i class="el-icon-s-fold" @click="toggle"></i>
+            <i :class="collapsea ? 'el-icon-s-unfold' : 'el-icon-s-fold'" @click="toggle"></i>
           </el-col>
           <el-col :span="2" :offset="20">
               <el-button type="inof" @click="loginout">退出</el-button>
